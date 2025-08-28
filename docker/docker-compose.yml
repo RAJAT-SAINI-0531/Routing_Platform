@@ -1,0 +1,51 @@
+services:
+  flask-qgis-app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      # Mount source code for hot reloading (parent directory since we're in docker/ subdirectory)
+      - ..:/app
+      # Named volume for persistent routing data
+      - routing_data:/app/routing_data
+      # Mount for GPKG files (parent directory)
+      - ../data:/app/data
+    environment:
+      - FLASK_APP=start_app.py
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+      - SECRET_KEY=9df31cad3eb2f66386575da6dd6641ae
+      # QGIS headless environment
+      - QT_QPA_PLATFORM=offscreen
+      - DISPLAY=:99
+      - QGIS_PREFIX_PATH=/opt/conda/envs/flaskenv/share/qgis
+      - QGIS_SERVER_LOG_LEVEL=0
+      - QGIS_DEBUG=0
+      - QT_LOGGING_RULES=*.debug=false
+      - PYTHONPATH=/opt/conda/envs/flaskenv/lib/python3.10/site-packages:/opt/conda/envs/flaskenv/share/qgis/python:/opt/conda/envs/flaskenv/share/qgis/python/plugins
+      # MongoDB connection
+      - MONGODB_URI=mongodb://mongodb:27017/flask_db
+    privileged: true  # Required for Xvfb
+    networks:
+      - app-network
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=flask_db
+    networks:
+      - app-network
+
+volumes:
+  routing_data:
+  mongodb_data:
+
+networks:
+  app-network:
+    driver: bridge

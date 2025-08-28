@@ -1,0 +1,1166 @@
+html, body{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#map { height: 100%; }
+
+
+.block {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    z-index: 1000;
+    background-color:white;
+    
+}
+
+
+.droparea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 226px;
+    max-width: 100%;
+    height: 80px;
+    background-color: aliceblue;
+    border: 4px dashed grey;
+    border-radius: 15px;
+    position: absolute;
+    padding: 20px;
+    bottom: -6px;
+    left: 0px;
+    z-index: 1000;
+    margin: 0;
+}
+ .leaflet-control-layers{
+    display: none;
+}
+
+input[type="file"] {
+    display: none;
+  }
+
+.leaflet-marker-shadow {
+    display: none !important;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
+.dropright{
+    position:absolute;
+    border-radius: 15px;
+    z-index: 10000;
+    left: 16px;
+
+}
+
+/* .start .dropdown-toggle {
+    bottom: 40px;
+    left: -10px;
+}
+.end .dropdown-toggle {
+    bottom: 20px;
+    left: -10px;
+} */
+
+
+
+.routing-menu{
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    width: 150px;
+    max-width: 100%;
+    height: 300px;
+    background-color: aliceblue;
+    border: 4px dashed grey;
+    border-radius: 15px;
+    position: relative;
+    bottom: 500px;
+    left: -45vw;
+    z-index: 1000;
+}
+
+
+.table-view{
+    display:none;
+    position: relative;
+    bottom: 720px;
+    z-index: 1000;
+    right: -65vw;
+    width: 520px;
+    padding: 35px;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.close-table{
+    position: relative;
+    bottom: 400px;
+    right: -240px;
+}
+
+
+.routing-tab{
+    position: absolute;
+    z-index: 1000;
+    bottom: 10px;
+    left: 12px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    background-color: aliceblue;
+    border: 2px;
+}
+
+.route-line{
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    width:600px;
+    height:200px;
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+.route-box{
+    flex:1;
+    border-style:solid;
+    border-width: 1px;
+    border-color:grey;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.route-box.text-input{
+    align-items:flex-start;
+}
+
+.route-box.text-input .query-btn {
+    align-self: center;
+    margin-top: 15px;
+}
+
+/* Toggle Switch Section Styles - Vertical Design */
+.toggle-section {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 36px;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    display: inline-block;
+    margin-bottom: -0.001rem;
+}
+
+.toggle-slider {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 13px;
+    left: 50%;
+    bottom: 3px;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.toggle-input:checked + .toggle-label {
+    background: #27B4F5;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 0 8px rgba(39,180,245,0.4);
+}
+
+.toggle-input:checked + .toggle-label .toggle-slider {
+    transform: translateX(-50%) translateY(-19px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.toggle-input:focus + .toggle-label {
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 0 6px rgba(39,180,245,0.6);
+}
+
+/* Remove toggle text styles since we're not using text anymore */
+
+/* File Upload Section with Smoother Animation */
+#file-upload-section {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: top;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+}
+
+#file-upload-section.show {
+    display: block !important;
+    opacity: 1;
+    max-height: 200px;
+    transform: translateY(0);
+    animation: slideInSmooth 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+#file-upload-section.hide {
+    animation: slideOutSmooth 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes slideInSmooth {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+        max-height: 0;
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 200px;
+    }
+}
+
+@keyframes slideOutSmooth {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 200px;
+    }
+    30% {
+        opacity: 0.8;
+        transform: translateY(-2px);
+        max-height: 180px;
+    }
+    70% {
+        opacity: 0.4;
+        transform: translateY(-8px);
+        max-height: 80px;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-15px);
+        max-height: 0;
+    }
+}
+
+/* Enhanced droparea styles for better integration */
+.droparea {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 0px dashed #6c757d;
+    border-radius: 45px;
+    padding: 10px 15px;
+    text-align: center;
+    margin: 8px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.droparea::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,123,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.droparea:hover::before {
+    left: 100%;
+}
+
+.droparea:hover {
+    border-color: #007bff;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    box-shadow: 0 3px 12px rgba(0,123,255,0.15);
+    transform: translateY(-1px);
+}
+
+.droparea p {
+    margin: 0 0 6px 0;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.custom-file-upload:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    box-shadow: 0 4px 15px rgba(0,123,255,0.4);
+    transform: translateY(-2px);
+}
+
+.custom-file-upload:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,123,255,0.3);
+}
+
+/* Routing Mode Section Styles - Improved Integration */
+.route-box.routing-mode-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 6px 45px 6px 10px;
+    margin: 1px auto 1px auto;
+    min-height: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.route-box.routing-mode-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,123,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.route-box.routing-mode-section:hover::before {
+    left: 100%;
+}
+
+.route-box.routing-mode-section:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.12);
+    transform: translateY(-1px);
+}
+
+.routing-mode-selector-alt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.routing-mode-dropdown-alt {
+    padding: 8px 14px;
+    border: 2px solid #e9ecef;
+    border-radius: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 280px;
+    min-width: 200px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    outline: none;
+    color: #495057;
+    text-align: center;
+    appearance: none;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    background-image: 
+        linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%),
+        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23007bff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: center, right 12px center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, 16px;
+    padding-right: 38px;
+}
+
+.routing-mode-dropdown-alt:hover {
+    border-color: #007bff;
+    box-shadow: 
+        0 4px 12px rgba(0,123,255,0.15), 
+        0 0 0 2px rgba(0,123,255,0.1);
+    transform: translateY(-1px) scale(1.01);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+    background-image: 
+        linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%),
+        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23007bff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: center, right 12px center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, 18px;
+}
+
+.routing-mode-dropdown-alt:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 
+        0 6px 16px rgba(0,123,255,0.2), 
+        0 0 0 3px rgba(0,123,255,0.12);
+    transform: translateY(-1px) scale(1.01);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+.routing-mode-dropdown-alt:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+/* Enhanced dropdown options styling */
+.routing-mode-dropdown-alt option {
+    padding: 12px 16px;
+    background: #ffffff;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* Style the placeholder option differently */
+.routing-mode-dropdown-alt option[disabled] {
+    color: #6c757d;
+    font-style: italic;
+    font-weight: 500;
+    background: #f8f9fa;
+}
+
+.routing-mode-dropdown-alt option:not([disabled]):hover {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #007bff;
+}
+
+.routing-mode-dropdown-alt option:checked {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    font-weight: 700;
+}
+
+/* When a real option is selected, make the dropdown text normal weight */
+.routing-mode-dropdown-alt:valid {
+    font-style: normal;
+    color: #495057;
+}
+
+/* Add a subtle animation when the value changes */
+@keyframes optionSelect {
+    0% { 
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        transform: scale(1.05);
+    }
+    100% { 
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        transform: scale(1);
+    }
+}
+
+.routing-mode-dropdown-alt:valid {
+    animation: optionSelect 0.3s ease;
+}
+
+.routing-mode-description {
+    display: none;
+}
+
+.routing-mode-description small {
+    display: none;
+}
+
+.box-span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* .leaflet-control-geocoder-alternatives {
+    position: absolute;
+    right: 100%; 
+    top: 0;
+    margin-right: 10px; 
+    z-index: 1000; 
+    width: 600px;
+    right: -630px;
+    background: aliceblue;
+    overflow:auto;
+  } */
+
+  input#address {
+    accent-color:orange;
+  }
+
+  input#zipcode {
+    accent-color:green;
+  }
+
+  input[type="search"]{
+    background:orange;
+    opacity:0.45;
+  }
+
+  input[type="search"]:focus{
+    opacity:0.80;
+  }
+
+  .attribute-table-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 945px;
+    height: 621px;
+    max-width: 95vw;
+    max-height: 95vh;
+    min-width: 400px;
+    min-height: 300px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    overflow: hidden;
+    resize: both;
+    font-family: Arial, sans-serif;
+}
+
+.attribute-table-header {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    padding: 12px 15px;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    cursor: move;
+    user-select: none;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+}
+
+.attribute-table-content {
+    height: calc(100% - 52px);
+    overflow: auto;
+    padding: 0;
+}
+
+.attribute-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 13px;
+}
+
+.attribute-table th,
+.attribute-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.attribute-table th {
+    background: rgba(192, 192, 192, 0.3);
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    color: #333;
+}
+
+.attribute-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.attribute-table tr:hover {
+    background: #e9ecef;
+}
+
+.close-attribute-table {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10001; /* Higher than container */
+    pointer-events: auto; /* Ensure button is clickable */
+}
+
+.close-attribute-table:hover {
+    background: #c82333;
+}
+
+.clickable-layer-name {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.clickable-layer-name:hover {
+    color: #0056b3;
+}
+
+/* Enhanced layer control styling */
+.leaflet-control-layers-overlays label {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.leaflet-control-layers-overlays label > span {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-left: 5px !important;
+}
+
+/* Ensure checkbox stays separate */
+.leaflet-control-layers-selector {
+    margin-right: 5px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Remove button styling */
+.layer-remove-btn {
+    background: #dc3545 !important;
+    color: white !important;
+    border: none !important;
+    padding: 2px 6px !important;
+    border-radius: 3px !important;
+    cursor: pointer !important;
+    font-size: 12px !important;
+    margin-right: 5px !important;
+    flex-shrink: 0 !important;
+}
+
+.layer-remove-btn:hover {
+    background: #c82333 !important;
+}
+
+/* Layer name button styling - Rectangular box with black borders and grey background */
+.layer-name-btn {
+    background: #f2f2f2 !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    padding: 4px 10px !important;
+    font-size: 13px !important;
+    border-radius: 4px !important;
+    margin-left: 3px !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+    flex-grow: 1 !important;
+}
+
+/* Hover effect - slightly darker grey */
+.layer-name-btn:hover {
+    background: #e6e6e6 !important;
+    border-color: #000000 !important;
+    color: #000000 !important;
+}
+
+/* Active state */
+.layer-name-btn:active {
+    background: #d9d9d9 !important;
+    border-color: #000000 !important;
+}
+
+/* Special styling for route table buttons */
+.route-table-btn {
+    background: #e3f2fd !important;
+    border: 2px solid #1976d2 !important;
+    color: #1976d2 !important;
+}
+
+.route-table-btn:hover {
+    background: #bbdefb !important;
+    border-color: #1976d2 !important;
+    color: #0d47a1 !important;
+}
+
+/* Table Container Base Styles */
+.table-container {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-346px, 148px);
+    width: 605px;
+    max-width: 850px;
+    min-width: 600px;
+    height: 304px;
+    max-height: 50vh;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 0;
+    z-index: 9999;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 32px;
+    display: block;
+    font-family: Arial, sans-serif;
+    resize: both;
+    overflow: hidden;
+}
+
+.table-header {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    padding: 12px 15px;
+    border-bottom: 2px solid #ddd;
+    cursor: move;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+}
+
+.table-header:active {
+    cursor: grabbing;
+}
+
+.table-title {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.close-table-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10000;
+}
+
+.close-table-btn:hover {
+    background: #c82333;
+}
+
+.table-content {
+    overflow: auto;
+    height: calc(100% - 52px);
+    padding: 15px;
+    background: #fff;
+}
+
+/* Enhanced table styling for content */
+.table-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.table-content th {
+    background-color: rgba(192, 192, 192, 0.3);
+    padding: 12px 8px;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    text-align: left;
+    color: #333;
+}
+
+.table-content td {
+    padding: 10px 8px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.table-content tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Universal table header styling - applies to all table headers */
+thead,
+thead tr,
+table thead th,
+table th {
+    background: rgba(192, 192, 192, 0.3) !important;
+    color: #333 !important;
+}
+
+/* Sortable table headers styling */
+.table-content th.sortable,
+.attribute-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.table-content th.sortable:hover,
+.attribute-table th.sortable:hover {
+    background-color: rgba(160, 160, 160, 0.4) !important;
+}
+
+.sort-indicator {
+    font-size: 12px;
+    margin-left: 5px;
+    display: inline-block;
+    opacity: 0.7;
+}
+
+.table-content th.sortable:hover .sort-indicator,
+.attribute-table th.sortable:hover .sort-indicator {
+    opacity: 1;
+}
+
+/* Enhanced styling for both table types */
+.attribute-table th {
+    background: rgba(192, 192, 192, 0.3);
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    color: #333;
+}
+
+.attribute-table th:hover {
+    background: rgba(160, 160, 160, 0.4) !important;
+}
+
+/* Layer Control Items */
+.layer-control-item {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Table search container styling */
+.table-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.search-column-dropdown {
+    min-width: 150px;
+    max-width: 200px;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    background: white;
+    cursor: pointer;
+}
+
+.search-column-dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.search-input {
+    flex: 1;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.search-input:disabled {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.clear-search-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.clear-search-btn:hover:not(:disabled) {
+    background: #495057;
+}
+
+.clear-search-btn:disabled {
+    background: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+/* Search highlighting styles */
+.search-highlight {
+    background-color: rgba(255, 165, 0, 0.3) !important;
+    font-weight: normal;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure highlighted text doesn't interfere with row selection */
+.table-content tr.selected .search-highlight,
+.attribute-table tr.selected .search-highlight {
+    background-color: rgba(255, 165, 0, 0.5) !important;
+}
+
+/* Row selection and filter controls */
+.table-control-btn.active {
+    background: #004085 !important;
+    color: white !important;
+    border-color: #003975 !important;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.3) !important;
+    transform: translateY(0) !important;
+}
+
+.table-control-btn.show-selected.active {
+    background: #1e7e34 !important;
+    color: white !important;
+    border-color: #155724 !important;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.3) !important;
+}
+
+.table-control-btn.show-unselected.active {
+    background: #e0a800 !important;
+    color: #212529 !important;
+    border-color: #d39e00 !important;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.3) !important;
+}
+
+.table-control-btn.deselect-all.active {
+    background: #c82333 !important;
+    color: white !important;
+    border-color: #bd2130 !important;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.3) !important;
+}
+
+.table-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-control-btn {
+    background: #b3d7ff;
+    color: #004085;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.table-control-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.table-control-btn:active {
+    background: #0056b3;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.table-control-btn.show-selected {
+    background: #a8e6a3;
+    color: #1e7e34;
+}
+
+.table-control-btn.show-selected:hover {
+    background: #28a745;
+    color: white;
+    border-color: #1e7e34;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.table-control-btn.show-unselected {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.table-control-btn.show-unselected:hover {
+    background: #ffc107;
+    color: #212529;
+    border-color: #e0a800;
+    box-shadow: 0 2px 4px rgba(255, 193, 7, 0.2);
+}
+
+.table-control-btn.deselect-all {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.table-control-btn.deselect-all:hover {
+    background: #dc3545;
+    color: white;
+    border-color: #c82333;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2);
+}
+
+/* Selected row styling */
+.table-content tr.selected,
+.attribute-table tr.selected {
+    background: #cce5f2 !important;
+    color: #333 !important;
+}
+
+.table-content tr.selected:hover,
+.attribute-table tr.selected:hover {
+    background: #b3d9f0 !important;
+    color: #333 !important;
+}
+
+/* Row selection cursor */
+.table-content tbody tr,
+.attribute-table tbody tr {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Message rows styling */
+tr[data-message-row] {
+    cursor: default !important;
+}
+
+tr[data-message-row] td {
+    font-style: italic;
+    color: #666 !important;
+    background-color: #f8f9fa !important;
+}
