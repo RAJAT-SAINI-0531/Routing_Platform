@@ -34,7 +34,7 @@ services:
   mongodb:
     image: mongo:7.0
     ports:
-      - "27017:27017"
+      - "27018:27017" # Change the host port to 27018
     volumes:
       - mongodb_data:/data/db
     environment:

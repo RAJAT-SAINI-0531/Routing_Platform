@@ -13,7 +13,7 @@ app.config.from_object(Config)
 bootstrap = Bootstrap(app)
 
 # MongoDB connection - try Docker first, then local
-mongodb_uri = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017')
+mongodb_uri = os.environ.get('MONGODB_URI', 'mongodb://localhost:27018')
 client = MongoClient(mongodb_uri)
 db = client.flask_db
 geoms = db.geoms

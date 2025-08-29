@@ -101,7 +101,7 @@ routing_platform_v1/
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd routing_platform_v1
+   cd Routing_Platform_Rajat
    ```
 
 2. **Install dependencies**
@@ -145,49 +145,19 @@ routing_platform_v1/
 ## 📊 Key Components
 
 ### Frontend (JavaScript)
-- **Main Logic**: `app/static/js/script.js` (⚠️ 2336 lines - NEEDS MODULARIZATION)
+- **Main Logic**: `app/static/js/script.js`
 - **Templates**: `app/static/js/templates.js`
 - **Styles**: `app/static/css/style.css`
 
 ### Backend (Python)
-- **Flask Routes**: `app/routes.py` (594 lines)
-- **QGIS Integration**: `processing/shortest_path.py` (159 lines)
+- **Flask Routes**: `app/routes.py`
+- **QGIS Integration**: `processing/shortest_path.py`
 - **Docker Processing**: `docker/docker_run_routing.py`
 
 ### Data Processing
 - **Input**: GeoJSON files, coordinate pairs, zip codes
 - **Processing**: QGIS routing algorithms
 - **Output**: Route geometries, distance calculations, attribute tables
-
-## 🚨 Recommended Improvements
-
-### 1. **JavaScript Modularization** (URGENT)
-The `app/static/js/script.js` file (2336 lines) should be split into:
-```
-app/static/js/
-├── core.js           # App initialization and globals
-├── mapping.js        # Leaflet map interactions
-├── routing.js        # Routing functionality
-├── tables.js         # Table management and search
-├── highlighting.js   # Map-table feature highlighting
-└── fileHandling.js   # File upload and processing
-```
-
-### 2. **Enhanced Documentation**
-- API documentation
-- Code comments and JSDoc
-- User guides
-- Deployment guides
-
-### 3. **Testing Framework**
-- Unit tests for Python functions
-- Integration tests for API endpoints
-- Frontend testing for JavaScript functions
-
-### 4. **Performance Optimization**
-- Code splitting and lazy loading
-- Database indexing
-- Caching strategies
 
 ## 🔄 Workflow
 
